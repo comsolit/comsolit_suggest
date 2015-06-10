@@ -1,0 +1,15 @@
+
+plugin.tx_comsolitsuggest {
+	view {
+		# cat=plugin.tx_comsolitsuggest/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:comsolit_suggest/Resources/Private/Templates/
+		# cat=plugin.tx_comsolitsuggest/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:comsolit_suggest/Resources/Private/Partials/
+		# cat=plugin.tx_comsolitsuggest/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:comsolit_suggest/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_comsolitsuggest//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}
