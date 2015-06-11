@@ -31,6 +31,12 @@ namespace TYPO3\ComsolitSuggest\Domain\Repository;
  * The repository for Queries
  */
 class QueryRepository extends \TYPO3\CMS\Extbase\Persistence\Repository {
-
+	
+	public function findAllByQuery($search) {
+		$query = $this->createQuery();
+		$query->getQuerySettings()->setReturnRawQueryResult(TRUE);
+		$query->statement("SELECT baseword from index_words WHERE baseword LIKE '" . $search . "%' LIMIT 10");
+		return $query->execute();
+	}
 	
 }
