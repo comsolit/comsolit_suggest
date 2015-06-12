@@ -49,7 +49,6 @@ class QueryController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 		
 		if($this->request->hasArgument('search')) {
 			$search = $this->request->getArgument('search');
-// 			$suggestions = $this->queryRepository->findAllByQuery($search);
 			
 			$suggestions = [];
 			$language = $GLOBALS['TSFE']->sys_language_uid;
@@ -64,7 +63,6 @@ class QueryController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 			while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res)){
 				$suggestions[] = $row; 
 			}
-// 			var_dump($suggestions); die();
 			
 			return $this->buildJsonRepsonseFromQuery($suggestions);
 		}

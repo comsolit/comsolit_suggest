@@ -1,1 +1,61 @@
-<input type="text" class="typeahead" />
+<f:form pageUid="{settings.searchPid}" method="post" class="search">
+      <div class="row collapse">
+        <div class="small-10 columns">
+          <input name="tx_indexedsearch[sword]" class="typeahead" size="15" type="text" value="" placeholder="{settings.placeholder}" />
+          <input name="tx_indexedsearch[_sections]" type="hidden" value="0" />
+          <input name="tx_indexedsearch[pointer]" type="hidden" value="0" />
+          <input name="tx_indexedsearch[ext]" type="hidden" value="0" />
+          <input name="tx_indexedsearch[lang]" type="hidden" value="0" />
+        </div>
+        <div class="small-2 columns">
+          <button name="tx_indexedsearch[submit_button]" type="submit" class="button postfix" >
+            <i class="fi-magnifying-glass size-small"></i>
+          </button>
+        </div>
+      </div>
+</f:form>
+
+<script type="text/javascript">
+<![CDATA[
+$(document).ready(function(){
+
+  var suggester = new Bloodhound({
+    datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    remote: {
+      cache: 'false',	
+      url: '/?type=999&no_cache=1&tx_comsolitsuggest_suggest[search]=%QUERY&tx_comsolitsuggest_suggest[method]=suggest',
+      wildcard: '%QUERY',
+      transport: function (ajaxOptions, onSuccess, onError) {
+    	  ajaxOptions.dataType = "html";
+	      $.ajax(ajaxOptions).done(done).fail(fail);
+	
+	      function done(data, textStatus, request) {
+	          onSuccess(JSON.parse(removeHTML(data)));
+	      }
+	
+	      function fail(request, textStatus, errorThrown) {
+	          console.log('test');
+	      }
+	  }
+    }
+  });
+
+  suggester.initialize();
+
+  $('.typeahead').typeahead({
+      hint: true,
+      highlight: true,
+      minLength: ]]>{settings.minLength}<![CDATA[
+    }, {
+    displayKey: 'value',
+    source: suggester.ttAdapter()
+  });
+
+  function removeHTML(input){
+    return input.replace(/<\/?[^>]+>/gi, '');
+  }
+
+});
+]]>
+</script>

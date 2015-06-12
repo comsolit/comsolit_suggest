@@ -1,4 +1,3 @@
-
 plugin.tx_comsolitsuggest {
 	view {
 		templateRootPath = {$plugin.tx_comsolitsuggest.view.templateRootPath}
@@ -12,10 +11,15 @@ plugin.tx_comsolitsuggest {
 		# uncomment the following line to enable the new Property Mapper.
 		# rewrittenPropertyMapper = 1
 	}
+	settings {
+		minLength = {$plugin.tx_comsolitsuggest.settings.minLength}
+		includeJquery = {$plugin.tx_comsolitsuggest.settings.includeJquery}
+		placeholder = {$plugin.tx_comsolitsuggest.settings.placeholder}
+		searchPid = {$plugin.tx_comsolitsuggest.settings.searchPid}
+	}
 }
 
-
-
+# page for ajaxcall
 ajaxCall = PAGE 
 ajaxCall { 
 	typeNum = 999 
@@ -35,9 +39,26 @@ ajaxCall {
 
 page {
 	includeJSFooter {
-		jquery = EXT:comsolit_suggest/bower_components/jquery/dist/jquery.min.js
+		jquery = EXT:comsolit_suggest/bower_components/dist/jquery.min.js
 		jquery.forceOnTop = 1
 		typeahead = EXT:comsolit_suggest/bower_components/typeahead.js/dist/typeahead.bundle.min.js
-		appJS = EXT:comsolit_suggest/Resources/Public/Js/app.js
 	}
+}
+
+plugin.tx_comsolit_suggest = USER
+plugin.tx_comsolit_suggest {
+    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    pluginName = Suggest
+    extensionName = ComsolitSuggest
+    vendorName = TYPO3
+    controller = Query
+    action = suggest
+    htmlSpecialChars = 1
+    switchableControllerActions {
+        Query {
+            1 = suggest
+        }
+     }
+    view =< plugin.tx_comsolitsuggest.view
+    persistence =< plugin.tx_comsolitsuggest.persistence
 }
