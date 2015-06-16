@@ -42,6 +42,10 @@ page {
 		jquery = EXT:comsolit_suggest/bower_components/dist/jquery.min.js
 		jquery.forceOnTop = 1
 		typeahead = EXT:comsolit_suggest/bower_components/typeahead.js/dist/typeahead.bundle.min.js
+		suggest = EXT:comsolit_suggest/Resources/Public/Js/suggest.js
+	}
+	includeCSS {
+		suggest = EXT:comsolit_suggest/Resources/Public/Css/suggest.css
 	}
 }
 
