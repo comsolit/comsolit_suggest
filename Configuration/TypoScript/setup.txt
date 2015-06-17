@@ -39,13 +39,52 @@ ajaxCall {
 
 page {
 	includeJSFooter {
-		jquery = EXT:comsolit_suggest/bower_components/dist/jquery.min.js
+		jquery = EXT:comsolit_suggest/bower_components/jquery/dist/jquery.min.js
 		jquery.forceOnTop = 1
 		typeahead = EXT:comsolit_suggest/bower_components/typeahead.js/dist/typeahead.bundle.min.js
-		suggest = EXT:comsolit_suggest/Resources/Public/Js/suggest.js
 	}
 	includeCSS {
 		suggest = EXT:comsolit_suggest/Resources/Public/Css/suggest.css
+	}
+	jsFooterInline {
+		999 = TEXT
+	  	999.value (
+			$(document).ready(function(){
+				var suggester = new Bloodhound({
+				    datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+				    queryTokenizer: Bloodhound.tokenizers.whitespace,
+				    remote: {
+						cache: 'false',	
+						url: '/?type=999&no_cache=1&tx_comsolitsuggest_suggest[search]=%QUERY&tx_comsolitsuggest_suggest[method]=suggest',
+						wildcard: '%QUERY',
+						transport: function (ajaxOptions, onSuccess, onError) {
+							ajaxOptions.dataType = "html";
+							$.ajax(ajaxOptions).done(done).fail(fail);
+					
+							function done(data, textStatus, request) {
+								onSuccess(JSON.parse(removeHTML(data)));
+					      	}
+					
+					      	function fail(request, textStatus, errorThrown) {
+					          	onError(errorThrown);
+					      	}
+					  	}
+				    }
+				});
+				suggester.initialize();
+				$('.typeahead').typeahead({
+					hint: true,
+				    highlight: true,
+				    minLength: '{$plugin.tx_comsolitsuggest.settings.minLength}',
+				}, {
+				    displayKey: 'value',
+				    source: suggester.ttAdapter()
+				});
+				function removeHTML(input){
+					return input.replace(/<\/?[^>]+>/gi, '');
+				}
+			});
+		)
 	}
 }
 
