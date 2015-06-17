@@ -32,30 +32,4 @@ namespace TYPO3\ComsolitSuggest\Domain\Model;
  */
 class Query extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
-	/**
-	 * baseword
-	 *
-	 * @var string
-	 */
-	protected $baseword = '';
-
-	/**
-	 * Returns the baseword
-	 *
-	 * @return string $baseword
-	 */
-	public function getBaseword() {
-		return $this->baseword;
-	}
-
-	/**
-	 * Sets the baseword
-	 *
-	 * @param string $baseword
-	 * @return void
-	 */
-	public function setBaseword($baseword) {
-		$this->baseword = $baseword;
-	}
-
 }

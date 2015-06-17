@@ -3,9 +3,7 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2015-06-10T14:13:52Z" product-name="comsolit_suggest">
 		<header/>
 		<body>
-			<trans-unit id="baseword.description">
-				<source>baseword</source>
-			</trans-unit>
+		
 		</body>
 	</file>
 </xliff>

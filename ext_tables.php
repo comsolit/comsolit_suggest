@@ -34,7 +34,7 @@ $GLOBALS['TCA']['tx_comsolitsuggest_domain_model_query'] = array(
 			'starttime' => 'starttime',
 			'endtime' => 'endtime',
 		),
-		'searchFields' => 'baseword,',
+		'searchFields' => '',
 		'dynamicConfigFile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath($_EXTKEY) . 'Configuration/TCA/Query.php',
 		'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath($_EXTKEY) . 'Resources/Public/Icons/tx_comsolitsuggest_domain_model_query.gif'
 	),

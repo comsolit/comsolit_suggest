@@ -6,9 +6,6 @@
 			<trans-unit id="tx_comsolitsuggest_domain_model_query">
 				<source>Query</source>
 			</trans-unit>
-			<trans-unit id="tx_comsolitsuggest_domain_model_query.baseword">
-				<source>Baseword</source>
-			</trans-unit>
 		</body>
 	</file>
 </xliff>
