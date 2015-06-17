@@ -15,7 +15,7 @@ plugin.tx_comsolitsuggest {
 	settings {
 		# cat=plugin.tx_comsolitsuggest/file; type=string; label=Minimum word length for suggest (val 1 to 10)
 		minLength = 1
-		# cat=plugin.tx_comsolitsuggest/file; type=string; label=Extra include jquery (1 or 0)
+		# cat=plugin.tx_comsolitsuggest/file; type=boolean; label=Extra include jquery (1 or 0)
 		includeJquery = 0
 		# cat=plugin.tx_comsolitsuggest/file; type=string; label=Placeholder in search input (text)
 		placeholder = suchen
