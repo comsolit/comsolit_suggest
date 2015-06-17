@@ -82,7 +82,10 @@ page {
 				}, {
 				    displayKey: 'value',
 				    source: suggester.ttAdapter()
-				});
+				})
+				.on('typeahead:selected', function(e){
+					e.target.form.submit();
+   				});
 				function removeHTML(input){
 					return input.replace(/<\/?[^>]+>/gi, '');
 				}
