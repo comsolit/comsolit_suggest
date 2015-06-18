@@ -78,7 +78,7 @@ page {
 				$('.typeahead').typeahead({
 					hint: true,
 				    highlight: true,
-				    minLength: '{$plugin.tx_comsolitsuggest.settings.minLength}',
+				    minLength: {$plugin.tx_comsolitsuggest.settings.minLength},
 				}, {
 				    displayKey: 'value',
 				    source: suggester.ttAdapter()
