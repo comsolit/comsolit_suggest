@@ -12,20 +12,20 @@
 
 $EM_CONF[$_EXTKEY] = array(
 	'title' => 'comsolit Suggest',
-	'description' => '',
+	'description' => 'This Plugin extends the searchform with an suggest/autocomplete feature of words indexed from Ext:indexed_search based on a ajax request and typeahead lib',
 	'category' => 'plugin',
-	'author' => 'Andres Lobacovs',
+	'author' => 'Andres Lobacovs, comsolit AG',
 	'author_email' => 'info@comsolit.com',
 	'state' => 'beta',
 	'internal' => '',
 	'uploadfolder' => '0',
 	'createDirs' => '',
 	'clearCacheOnLoad' => 0,
-	'version' => '1.0',
+	'version' => '1.0.0',
 	'constraints' => array(
 		'depends' => array(
-			'typo3' => '6.2.0-6.2.99',
-			'indexed_search' => '6.2.0-6.2.99',
+			'typo3' => '6.2.0-7.3.99',
+			'indexed_search' => '6.2.0-7.3.99',
 		),
 		'conflicts' => array(
 		),
