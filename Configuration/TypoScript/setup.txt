@@ -12,6 +12,7 @@ plugin.tx_comsolitsuggest {
 		# rewrittenPropertyMapper = 1
 	}
 	settings {
+		limit = {$plugin.tx_comsolitsuggest.settings.limit}
 		minLength = {$plugin.tx_comsolitsuggest.settings.minLength}
 		includeJquery = {$plugin.tx_comsolitsuggest.settings.includeJquery}
 		placeholder = {$plugin.tx_comsolitsuggest.settings.placeholder}
@@ -78,6 +79,7 @@ page {
 				$('.typeahead').typeahead({
 					hint: true,
 				    highlight: true,
+				    limit: {$plugin.tx_comsolitsuggest.settings.limit},
 				    minLength: {$plugin.tx_comsolitsuggest.settings.minLength},
 				}, {
 				    displayKey: 'value',

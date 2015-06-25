@@ -3,4 +3,8 @@ span.twitter-typeahead {
 }
 .tt-dataset {
 	background-color: white;
+	cursor: pointer;
+}
+.tt-selectable:hover {
+	background-color: #ddd;
 }
