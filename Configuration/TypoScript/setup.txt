@@ -45,7 +45,7 @@ page {
 			forceOnTop = 1
 			if.isTrue = {$plugin.tx_comsolitsuggest.settings.includeJquery}
 		}
-		typeahead = EXT:comsolit_suggest/bower_components/typeahead.js/dist/typeahead.bundle.min.js
+		typeahead = EXT:comsolit_suggest/bower_components/typeahead.js/dist/typeahead.bundle_mod.js
 	}
 	includeCSS {
 		suggest = EXT:comsolit_suggest/Resources/Public/Css/suggest.css
