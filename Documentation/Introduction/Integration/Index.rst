@@ -14,7 +14,7 @@ For example: The Template from "indexed_search" need the class on the input "swo
 
 .. code-block:: html
 
-	<input type="text" name="tx_indexedsearch[sword]" value="###SWORD_VALUE###"
+  <input type="text" name="tx_indexedsearch[sword]" value="###SWORD_VALUE###"
   class="typeahead" id="tx-indexedsearch-searchbox-sword" />
 
 
