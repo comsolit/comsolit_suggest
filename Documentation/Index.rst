@@ -25,9 +25,10 @@ The content of this document is related to TYPO3 - a GNU/GPL CMS/Framework avail
 
 
 .. toctree::
-    :maxdepth: 5
-		:titlesonly:
-		:glob:
-	  	Introduction/Index
-		  Screenshot/Index
-		  Changelog/Index
+   :maxdepth: 5
+   :titlesonly:
+   :glob:
+
+     Introduction/Index
+     Screenshot/Index
+     Changeloq/Index

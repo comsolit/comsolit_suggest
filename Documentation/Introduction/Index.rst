@@ -26,8 +26,9 @@ Features
 
 
 .. toctree::
-:maxdepth: 5
-			:titlesonly:
-			:glob:
-		    Integration/Index
-			  Styling/Index
+   :maxdepth: 5
+   :titlesonly:
+   :glob:
+
+	   Integration/Index
+	   Styling/Index
