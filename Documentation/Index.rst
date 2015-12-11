@@ -8,17 +8,17 @@ EXT: comsolit_suggest
 =====================
 
 :Classification:
-				comsolit_suggest
+   comsolit_suggest
 
 :Language:
-				en
+   en
 
 :Copyright:
-				comsolit AG, info@comsolit.com
+   comsolit AG, info@comsolit.com
 
 :License:
-				This document is published under the Open Content License
-				available from http://www.opencontent.org/opl.shtml
+   This document is published under the Open Content License
+   available from http://www.opencontent.org/opl.shtml
 
 
 The content of this document is related to TYPO3 - a GNU/GPL CMS/Framework available from www.typo3.org
@@ -29,6 +29,6 @@ The content of this document is related to TYPO3 - a GNU/GPL CMS/Framework avail
    :titlesonly:
    :glob:
 
-     Introduction/Index
-     Screenshot/Index
-     Changeloq/Index
+   Introduction/Index
+   Screenshot/Index
+   Changeloq/Index

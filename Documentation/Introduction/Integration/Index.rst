@@ -24,7 +24,7 @@ Integration Example 2
 
 .. code-block:: html
 
-	<f:cObject typoscriptObjectPath="lib.searchbox" />
+  <f:cObject typoscriptObjectPath="lib.searchbox" />
 
 
 * assign the plugin to this object: lib.searchbox < plugin.tx_comsolit_suggest

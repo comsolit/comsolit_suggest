@@ -4,9 +4,6 @@
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
 
-EXT: comsolit_suggest
-=====================
-
 Search Word Suggestion / Autocompletion
 =======================================
 
@@ -30,5 +27,5 @@ Features
    :titlesonly:
    :glob:
 
-	   Integration/Index
-	   Styling/Index
+   Integration/Index
+   Styling/Index
