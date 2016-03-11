@@ -17,6 +17,8 @@ For example: The Template from "indexed_search" need the class on the input "swo
   <input type="text" name="tx_indexedsearch[sword]" value="###SWORD_VALUE###"
   class="typeahead" id="tx-indexedsearch-searchbox-sword" />
 
+  * don't forget to include static template (from extensions) selector
+
 
 Integration Example 2
 ---------------------
@@ -29,3 +31,5 @@ Integration Example 2
 
 * assign the plugin to this object: lib.searchbox < plugin.tx_comsolit_suggest
 The Template form the extension is used
+
+* don't forget to include static template (from extensions) selector

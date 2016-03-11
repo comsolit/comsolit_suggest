@@ -15,51 +15,5 @@ Features
 * add autocomplete/suggest to the standard indexed_search form template
 * configuration of minLenght and Limitation of suggested words
 
-Integration Example 1
----------------------
-* just add class="typeahead" to your searchbox
-For example: The Template from "indexed_search" need the class on the input "sword"
-
-.. code-block:: html
-
-	<input type="text" name="tx_indexedsearch[sword]" value="###SWORD_VALUE###" 
-class="typeahead" id="tx-indexedsearch-searchbox-sword" />
-
-
-Integration Example 2
----------------------
-* Use a TypoScript Object for example "lib.searchbox" in your template
-
-.. code-block:: html
-
-	<f:cObject typoscriptObjectPath="lib.searchbox" />
-
-
-* assign the plugin to this object: lib.searchbox < plugin.tx_comsolit_suggest
-The Template form the extension is used
-
-Change Styling for your Page
-----------------------------
-* make a copy of the searchbox Template 
-"comsolit_suggest/Resources/Private/Templates/Suggest.html" in your theme files
-* make a of "comsolit_suggest/Resources/Public/Css/suggest.css" to your theme files 
-* configure that TYPO3 uses your copies
-
-.. code-block:: typoscript
-
-	plugin.tx_comsolitsuggest.view {
-		templateRootPaths >
-	    templateRootPaths {
-		0 = EXT:comsolit_suggest/Resources/Private/Templates/
-			1 = fileadmin/theme/comsolit_suggest/Templates/
-		}
-	}
-
-.. code-block:: typoscript
-
-	page.includeCSS.suggest = fileadmin/theme/comsolit_suggest/suggest.css
-	
-	
-
-* change HTML in "Suggest.html"*
-* change CSS in "suggest.css"*
+See `full documentation
+<https://docs.typo3.org/typo3cms/extensions/comsolit_suggest/>`_.
