@@ -23,5 +23,7 @@ plugin.tx_comsolitsuggest {
 		placeholder = suchen
 		# cat=plugin.tx_comsolitsuggest/file; type=int+; label=Page ID where the Indexedsearch Plugin is (PID)
 		searchPid = 40
+		# cat=plugin.tx_comsolitsuggest/file; type=string; label=Required when TYPO3 root is placed in subdirectory
+		URL =
 	}
 }

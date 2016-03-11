@@ -39,10 +39,9 @@ ajaxCall {
 }
 
 page {
-	includeJSFooter {
+	includeJSLibs {
 		jquery = EXT:comsolit_suggest/bower_components/jquery/dist/jquery.min.js
 		jquery {
-			forceOnTop = 1
 			if.isTrue = {$plugin.tx_comsolitsuggest.settings.includeJquery}
 		}
 		typeahead = EXT:comsolit_suggest/bower_components/typeahead.js/dist/typeahead.bundle_mod.js
@@ -59,7 +58,7 @@ page {
 				    queryTokenizer: Bloodhound.tokenizers.whitespace,
 				    remote: {
 						cache: 'false',	
-						url: '/?type=999&no_cache=1&tx_comsolitsuggest_suggest[search]=%QUERY&tx_comsolitsuggest_suggest[method]=suggest',
+						url: '{$plugin.tx_comsolitsuggest.settings.URL}/?type=999&no_cache=1&tx_comsolitsuggest_suggest[search]=%QUERY&tx_comsolitsuggest_suggest[method]=suggest',
 						wildcard: '%QUERY',
 						transport: function (ajaxOptions, onSuccess, onError) {
 							ajaxOptions.dataType = "html";
@@ -79,10 +78,10 @@ page {
 				$('.typeahead').typeahead({
 					hint: true,
 				    highlight: true,
-				    limit: {$plugin.tx_comsolitsuggest.settings.limit},
 				    minLength: {$plugin.tx_comsolitsuggest.settings.minLength},
 				}, {
-				    displayKey: 'value',
+					limit: {$plugin.tx_comsolitsuggest.settings.limit},
+					displayKey: 'value',
 				    source: suggester.ttAdapter()
 				})
 				.on('typeahead:selected', function(e){
