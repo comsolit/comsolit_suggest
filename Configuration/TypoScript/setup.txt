@@ -44,6 +44,8 @@ page {
 		jquery {
 			if.isTrue = {$plugin.tx_comsolitsuggest.settings.includeJquery}
 		}
+	}
+	includeJSFooter  {
 		typeahead = EXT:comsolit_suggest/bower_components/typeahead.js/dist/typeahead.bundle_mod.js
 	}
 	includeCSS {
