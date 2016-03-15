@@ -15,5 +15,5 @@ Features
 * add autocomplete/suggest to the standard indexed_search form template
 * configuration of minLenght and Limitation of suggested words
 
-See `full documentation
-<https://docs.typo3.org/typo3cms/extensions/comsolit_suggest/>`_.
+Extension Documentation
+<https://docs.typo3.org/typo3cms/extensions/comsolit_suggest/>

@@ -23,7 +23,7 @@ ChangeLog
 +----------------+---------------------------------------------------------------------------------+
 | 1.0.5          | remove whitespace in Documentation                                              |
 +----------------+---------------------------------------------------------------------------------+
-| 1.0.6          | update Documenation, add typoscript constant for adding URL when TYPO3 root     |
-|                | is in subdirectory, fixed limit constant for showing given amount of suggests,  |
+| 1.0.6          | add typoscript constant for adding URL when TYPO3 root is in subdirectory       |
+|                | fixed limit constant for showing given amount of suggests                       |
 |                | when include jQuery is enabled, it will be bind in header now                   |
 +----------------+---------------------------------------------------------------------------------+
