@@ -39,16 +39,16 @@ Features
 * the extension includes a searchbox for easy integration in your page
 * simple adding autocomplete/suggest to an input field with class="typeahead"
 * jQuery on/off mode
-* Styling autocomplete/suggest pulldown via CSS and HTML template file
+* styling autocomplete/suggest pulldown via CSS and HTML template file
 * add autocomplete/suggest to the standard indexed_search form template
 * configuration of minLenght and Limitation of suggested words
 
 comsolit AG
 -----------
-we are specializes in web development and development of web-based software, the realization of complex websites and e-commerce solutions,
+We are specializes in web development and development of web-based software, the realization of complex websites and e-commerce solutions,
 which always require a degree of individuality and innovation. More about our solutions at https://www.comsolit.com/
 
-For Support, Bug or Issu Requests please go to our Github Page https://github.com/comsolit/comsolit_suggest
+For support, bug or issu requests please visit our Github page https://github.com/comsolit/comsolit_suggest
 
 .. toctree::
    :maxdepth: 5
