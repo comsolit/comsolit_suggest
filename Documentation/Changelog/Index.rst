@@ -27,3 +27,5 @@ ChangeLog
 |                | fixed limit constant for showing given amount of suggests                       |
 |                | when include jQuery is enabled, it will be bind in header now                   |
 +----------------+---------------------------------------------------------------------------------+
+| 1.0.7          | fix broken link in docu and update doc                                          |
++----------------+---------------------------------------------------------------------------------+
