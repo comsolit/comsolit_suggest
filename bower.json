@@ -1,23 +1,15 @@
 {
   "name": "comsolit_suggest",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "authors": [
-    "Christian Lecherbauer <lecherbauer@comsolit.ch>"
-  ],
-  "moduleType": [
-    "amd"
-  ],
-  "keywords": [
-    "autosuggest"
+    "comsolit AG <info@comsolit.com>"
   ],
   "license": "MIT",
   "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components",
-    "test",
-    "tests"
+    "bower_components"
   ],
   "dependencies": {
     "typeahead.js": "~0.11.1"
