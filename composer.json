@@ -1,0 +1,32 @@
+{
+  "name": "comsolit/comsolit_suggest",
+  "type": "typo3-cms-extension",
+  "description": "Suggest Autocomplete Search Extension",
+  "version": "0.0.1",
+  "keywords": [
+    "TYPO3",
+    "CMS",
+    "search",
+    "typo3"
+  ],
+  "replace": {
+    "comsolit_suggest": "self.version",
+    "comsolit/comsolit_suggest": "self.version"
+  },
+  "require": {
+    "typo3/cms-core": ">=6.2.0,<8.1.0",
+    "php": ">=5.5.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "TYPO3\\ComsolitSuggest\\": "Classes/"
+    }
+  },
+  "authors": [
+    {
+      "name": "comsolit AG",
+      "email": "info@comsolit.com",
+      "homepage": "https://www.comsolit.com/"
+    }
+  ]
+}
