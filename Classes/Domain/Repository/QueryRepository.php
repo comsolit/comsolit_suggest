@@ -1,5 +1,5 @@
 <?php
-namespace TYPO3\ComsolitSuggest\Domain\Repository;
+namespace Comsolit\ComsolitSuggest\Domain\Repository;
 
 
 /***************************************************************

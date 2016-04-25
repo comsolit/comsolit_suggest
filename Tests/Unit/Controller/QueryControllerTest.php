@@ -1,5 +1,5 @@
 <?php
-namespace TYPO3\ComsolitSuggest\Tests\Unit\Controller;
+namespace Comsolit\ComsolitSuggest\Tests\Unit\Controller;
 /***************************************************************
  *  Copyright notice
  *
@@ -25,19 +25,19 @@ namespace TYPO3\ComsolitSuggest\Tests\Unit\Controller;
  ***************************************************************/
 
 /**
- * Test case for class TYPO3\ComsolitSuggest\Controller\QueryController.
+ * Test case for class Comsolit\ComsolitSuggest\Controller\QueryController.
  *
  * @author Andres Lobacovs <info@comsolit.com>
  */
 class QueryControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 
 	/**
-	 * @var \TYPO3\ComsolitSuggest\Controller\QueryController
+	 * @var \Comsolit\ComsolitSuggest\Controller\QueryController
 	 */
 	protected $subject = NULL;
 
 	protected function setUp() {
-		$this->subject = $this->getMock('TYPO3\\ComsolitSuggest\\Controller\\QueryController', array('redirect', 'forward', 'addFlashMessage'), array(), '', FALSE);
+		$this->subject = $this->getMock('Comsolit\\ComsolitSuggest\\Controller\\QueryController', array('redirect', 'forward', 'addFlashMessage'), array(), '', FALSE);
 	}
 
 	protected function tearDown() {

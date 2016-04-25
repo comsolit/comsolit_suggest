@@ -1,5 +1,5 @@
 <?php
-namespace TYPO3\ComsolitSuggest\Controller;
+namespace Comsolit\ComsolitSuggest\Controller;
 
 
 /***************************************************************
@@ -35,7 +35,7 @@ class QueryController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	/**
 	 * queryRepository
 	 *
-	 * @var \TYPO3\ComsolitSuggest\Domain\Repository\QueryRepository
+	 * @var \Comsolit\ComsolitSuggest\Domain\Repository\QueryRepository
 	 * @inject
 	 */
 	protected $queryRepository = NULL;

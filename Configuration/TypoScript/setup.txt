@@ -102,7 +102,7 @@ plugin.tx_comsolit_suggest {
     userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
     pluginName = Suggest
     extensionName = ComsolitSuggest
-    vendorName = TYPO3
+    vendorName = Comsolit
     controller = Query
     action = suggest
     htmlSpecialChars = 1

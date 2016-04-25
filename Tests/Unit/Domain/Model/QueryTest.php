@@ -1,6 +1,6 @@
 <?php
 
-namespace TYPO3\ComsolitSuggest\Tests\Unit\Domain\Model;
+namespace Comsolit\ComsolitSuggest\Tests\Unit\Domain\Model;
 
 /***************************************************************
  *  Copyright notice
@@ -27,7 +27,7 @@ namespace TYPO3\ComsolitSuggest\Tests\Unit\Domain\Model;
  ***************************************************************/
 
 /**
- * Test case for class \TYPO3\ComsolitSuggest\Domain\Model\Query.
+ * Test case for class \Comsolit\ComsolitSuggest\Domain\Model\Query.
  *
  * @copyright Copyright belongs to the respective authors
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
@@ -36,12 +36,12 @@ namespace TYPO3\ComsolitSuggest\Tests\Unit\Domain\Model;
  */
 class QueryTest extends \TYPO3\CMS\Core\Tests\UnitTestCase {
 	/**
-	 * @var \TYPO3\ComsolitSuggest\Domain\Model\Query
+	 * @var \Comsolit\ComsolitSuggest\Domain\Model\Query
 	 */
 	protected $subject = NULL;
 
 	protected function setUp() {
-		$this->subject = new \TYPO3\ComsolitSuggest\Domain\Model\Query();
+		$this->subject = new \Comsolit\ComsolitSuggest\Domain\Model\Query();
 	}
 
 	protected function tearDown() {
