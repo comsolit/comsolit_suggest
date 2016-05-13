@@ -19,7 +19,7 @@
   },
   "autoload": {
     "psr-4": {
-      "TYPO3\\ComsolitSuggest\\": "Classes/"
+      "Comsolit\\ComsolitSuggest\\": "Classes/"
     }
   },
   "authors": [
