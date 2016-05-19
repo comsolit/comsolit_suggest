@@ -16,4 +16,4 @@ Features
 * configuration of minLenght and Limitation of suggested words
 
 Extension Documentation
-<https://typo3.org/extensions/repository/view/owl_slider>
+<https://typo3.org/extensions/repository/view/comsolit_suggest>
