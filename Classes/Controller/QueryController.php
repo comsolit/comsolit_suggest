@@ -49,9 +49,7 @@ class QueryController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      */
     public function suggestAction()
     {
-
         if ($this->request->hasArgument('search')) {
-
             $quoteSearch = $GLOBALS['TYPO3_DB']->quoteStr($this->request->getArgument('search'), 'index_words');
             $search = $GLOBALS['TYPO3_DB']->escapeStrForLike($quoteSearch, 'index_words');
 
