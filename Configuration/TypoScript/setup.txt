@@ -10,6 +10,10 @@ plugin.tx_comsolitsuggest {
 	features {
 		# uncomment the following line to enable the new Property Mapper.
 		# rewrittenPropertyMapper = 1
+
+        # Disable the use of a valid cHash for cached and uncached Extbase actions according to:
+		# https://docs.typo3.org/typo3cms/extensions/core/8.7/Changelog/8.5/Breaking-78002-EnforceCHashArgumentForExtbaseActions.html
+        requireCHashArgumentForActionArguments = 0
 	}
 	settings {
 		limit = {$plugin.tx_comsolitsuggest.settings.limit}
