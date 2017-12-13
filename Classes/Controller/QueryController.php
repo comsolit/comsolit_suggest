@@ -33,14 +33,6 @@ namespace Comsolit\ComsolitSuggest\Controller;
 class QueryController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
 
 	/**
-	 * queryRepository
-	 *
-	 * @var \Comsolit\ComsolitSuggest\Domain\Repository\QueryRepository
-	 * @inject
-	 */
-	protected $queryRepository = NULL;
-
-	/**
 	 * action suggest
 	 *
 	 * @return void
