@@ -2,7 +2,7 @@
   "name": "comsolit/comsolit_suggest",
   "type": "typo3-cms-extension",
   "description": "Suggest Autocomplete Search Extension",
-  "version": "1.1.2",
+  "version": "2.0.0",
   "keywords": [
     "TYPO3",
     "CMS",
@@ -14,7 +14,7 @@
     "comsolit/comsolit_suggest": "self.version"
   },
   "require": {
-    "typo3/cms-core": ">=6.2.0,<8.1.0",
+    "typo3/cms-core": ">=7.6.0,<8.7.99",
     "php": ">=5.5.0"
   },
   "autoload": {
