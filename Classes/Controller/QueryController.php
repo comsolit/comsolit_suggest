@@ -2,6 +2,9 @@
 
 namespace Comsolit\ComsolitSuggest\Controller;
 
+use TYPO3\CMS\Core\Context\Context;
+use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /***************************************************************
  *
@@ -33,13 +36,20 @@ namespace Comsolit\ComsolitSuggest\Controller;
  */
 class QueryController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
+<<<<<<< HEAD
 
     /**
      * @return false|string
+=======
+    /**
+     * @return false|string
+     * @throws \TYPO3\CMS\Core\Context\Exception\AspectNotFoundException
+>>>>>>> 4319797... [TASK] Release for TYPO3 9
      * @throws \TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException
      */
     public function suggestAction()
     {
+<<<<<<< HEAD
 
         if ($this->request->hasArgument('search')) {
 
@@ -69,6 +79,46 @@ class QueryController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         return json_encode($this->createValueMapFromStringArray($suggestions));
     }
 
+=======
+        if ($this->request->hasArgument('search')) {
+            $search = $this->request->getArgument('search');
+
+            $language = GeneralUtility::makeInstance(Context::class)->getAspect('language')->getId();
+
+            $q = $this->getDatabaseConnection()->createQueryBuilder();
+
+            $q->selectLiteral('SQL_NO_CACHE DISTINCT baseword')
+                ->from('index_words', 'w')
+                ->leftJoin('w', 'index_rel', 'r', 'w.wid = r.wid')
+                ->leftJoin('r', 'index_phash', 'p', 'r.phash = p.phash')
+                ->where(
+                    $q->expr()->andX(
+                        $q->expr()->like('w.baseword', $q->createNamedParameter("%$search%", \PDO::PARAM_STR)),
+                        $q->expr()->eq('p.sys_language_uid', $q->createNamedParameter($language, \PDO::PARAM_INT))
+                    )
+                )
+                ->setMaxResults(10);
+
+            $suggestions = $q->execute()->fetchAll();
+
+            return $this->buildJsonRepsonseFromQuery($suggestions);
+        }
+    }
+
+    /**
+     * @return \TYPO3\CMS\Core\Database\Connection
+     */
+    protected function getDatabaseConnection()
+    {
+        return GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable('index_words');
+    }
+
+    private function buildJsonRepsonseFromQuery($suggestions)
+    {
+        return json_encode($this->createValueMapFromStringArray($suggestions));
+    }
+
+>>>>>>> 4319797... [TASK] Release for TYPO3 9
     private function createValueMapFromStringArray($array)
     {
         $options = [];
