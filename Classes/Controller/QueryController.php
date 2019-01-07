@@ -1,6 +1,10 @@
 <?php
+
 namespace Comsolit\ComsolitSuggest\Controller;
 
+use TYPO3\CMS\Core\Context\Context;
+use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /***************************************************************
  *
@@ -30,48 +34,62 @@ namespace Comsolit\ComsolitSuggest\Controller;
 /**
  * QueryController
  */
-class QueryController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
+class QueryController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+{
+    /**
+     * @return false|string
+     * @throws \TYPO3\CMS\Core\Context\Exception\AspectNotFoundException
+     * @throws \TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException
+     */
+    public function suggestAction()
+    {
+        if ($this->request->hasArgument('search')) {
+            $search = $this->request->getArgument('search');
 
-	/**
-	 * action suggest
-	 *
-	 * @return void
-	 */
-	public function suggestAction() {
-		
-		if($this->request->hasArgument('search')) {
-			$search = $this->request->getArgument('search');
-			
-			$suggestions = [];
-			$language = $GLOBALS['TSFE']->sys_language_uid;
-			$field ='SQL_NO_CACHE DISTINCT baseword';
-			$from    ='index_words LEFT JOIN index_rel ON index_words.wid = index_rel.wid 
-						LEFT JOIN index_phash ON index_rel.phash = index_phash.phash';
-			$where  ='baseword LIKE '."'" . $search . '%' ."'" . ' AND index_phash.sys_language_uid =' . $language;
-			$groub_by = '';
-			$order_by = '';
-			$limit = '10';
-			$res = $GLOBALS['TYPO3_DB']->exec_SELECTquery($field, $from, $where, $groub_by, $order_by, $limit);
-			while($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res)){
-				$suggestions[] = $row; 
-			}
-			
-			return $this->buildJsonRepsonseFromQuery($suggestions);
-		}
-	}
-	
-	private function buildJsonRepsonseFromQuery($suggestions) {
-		return json_encode( $this->createValueMapFromStringArray($suggestions));
-	}
-	
-	private function createValueMapFromStringArray($array) {
-		$options = [];
-		foreach($array as $value){
-			if(!is_int($value)) {
-				$options[]['value'] = $value['baseword'];
-			}
-		}
-		return $options;
-	}
+            $language = GeneralUtility::makeInstance(Context::class)->getAspect('language')->getId();
+
+            $q = $this->getDatabaseConnection()->createQueryBuilder();
+
+            $q->selectLiteral('SQL_NO_CACHE DISTINCT baseword')
+                ->from('index_words', 'w')
+                ->leftJoin('w', 'index_rel', 'r', 'w.wid = r.wid')
+                ->leftJoin('r', 'index_phash', 'p', 'r.phash = p.phash')
+                ->where(
+                    $q->expr()->andX(
+                        $q->expr()->like('w.baseword', $q->createNamedParameter("%$search%", \PDO::PARAM_STR)),
+                        $q->expr()->eq('p.sys_language_uid', $q->createNamedParameter($language, \PDO::PARAM_INT))
+                    )
+                )
+                ->setMaxResults(10);
+
+            $suggestions = $q->execute()->fetchAll();
+
+            return $this->buildJsonRepsonseFromQuery($suggestions);
+        }
+    }
+
+    /**
+     * @return \TYPO3\CMS\Core\Database\Connection
+     */
+    protected function getDatabaseConnection()
+    {
+        return GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable('index_words');
+    }
+
+    private function buildJsonRepsonseFromQuery($suggestions)
+    {
+        return json_encode($this->createValueMapFromStringArray($suggestions));
+    }
+
+    private function createValueMapFromStringArray($array)
+    {
+        $options = [];
+        foreach ($array as $value) {
+            if (!is_int($value)) {
+                $options[]['value'] = $value['baseword'];
+            }
+        }
+        return $options;
+    }
 
 }
