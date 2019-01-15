@@ -93,7 +93,7 @@ class QueryController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
                 ->leftJoin('r', 'index_phash', 'p', 'r.phash = p.phash')
                 ->where(
                     $q->expr()->andX(
-                        $q->expr()->like('w.baseword', $q->createNamedParameter("%$search%", \PDO::PARAM_STR)),
+                        $q->expr()->like('w.baseword', $q->createNamedParameter("%" . $q->escapeLikeWildcards($search) . "%", \PDO::PARAM_STR)),
                         $q->expr()->eq('p.sys_language_uid', $q->createNamedParameter($language, \PDO::PARAM_INT))
                     )
                 )
