@@ -36,50 +36,13 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 class QueryController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
-<<<<<<< HEAD
 
     /**
      * @return false|string
-=======
-    /**
-     * @return false|string
-     * @throws \TYPO3\CMS\Core\Context\Exception\AspectNotFoundException
->>>>>>> 4319797... [TASK] Release for TYPO3 9
      * @throws \TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException
      */
     public function suggestAction()
     {
-<<<<<<< HEAD
-
-        if ($this->request->hasArgument('search')) {
-
-            $quoteSearch = $GLOBALS['TYPO3_DB']->quoteStr($this->request->getArgument('search'), 'index_words');
-            $search = $GLOBALS['TYPO3_DB']->escapeStrForLike($quoteSearch, 'index_words');
-
-            $suggestions = [];
-            $language = $GLOBALS['TSFE']->sys_language_uid;
-            $field = 'SQL_NO_CACHE DISTINCT baseword';
-            $from = 'index_words LEFT JOIN index_rel ON index_words.wid = index_rel.wid 
-						LEFT JOIN index_phash ON index_rel.phash = index_phash.phash';
-            $where = 'baseword LIKE ' . "'" . $search . '%' . "'" . ' AND index_phash.sys_language_uid =' . $language;
-            $groub_by = '';
-            $order_by = '';
-            $limit = '10';
-            $res = $GLOBALS['TYPO3_DB']->exec_SELECTquery($field, $from, $where, $groub_by, $order_by, $limit);
-            while ($row = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($res)) {
-                $suggestions[] = $row;
-            }
-
-            return $this->buildJsonRepsonseFromQuery($suggestions);
-        }
-    }
-
-    private function buildJsonRepsonseFromQuery($suggestions)
-    {
-        return json_encode($this->createValueMapFromStringArray($suggestions));
-    }
-
-=======
         if ($this->request->hasArgument('search')) {
             $search = $this->request->getArgument('search');
 
@@ -101,7 +64,7 @@ class QueryController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 
             $suggestions = $q->execute()->fetchAll();
 
-            return $this->buildJsonRepsonseFromQuery($suggestions);
+            return $this->buildJsonResponseFromQuery($suggestions);
         }
     }
 
@@ -113,12 +76,19 @@ class QueryController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         return GeneralUtility::makeInstance(ConnectionPool::class)->getConnectionForTable('index_words');
     }
 
-    private function buildJsonRepsonseFromQuery($suggestions)
+    /**
+     * @param $suggestions
+     * @return false|string
+     */
+    private function buildJsonResponseFromQuery($suggestions)
     {
         return json_encode($this->createValueMapFromStringArray($suggestions));
     }
 
->>>>>>> 4319797... [TASK] Release for TYPO3 9
+    /**
+     * @param $array
+     * @return array
+     */
     private function createValueMapFromStringArray($array)
     {
         $options = [];

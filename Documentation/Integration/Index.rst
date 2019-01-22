@@ -17,7 +17,7 @@ For example: The Template from "indexed_search" need the class on the input "swo
   <input type="text" name="tx_indexedsearch[sword]" value="###SWORD_VALUE###"
   class="typeahead" id="tx-indexedsearch-searchbox-sword" />
 
-  * don't forget to include static template (from extensions) selector
+* don't forget to include static template (from extensions) selector
 
 
 Integration Example 2
@@ -33,3 +33,14 @@ Integration Example 2
 The Template form the extension is used
 
 * don't forget to include static template (from extensions) selector
+
+
+Integration Example 3
+---------------------
+* include static template (from extensions) selector
+
+	.. image:: ../Images/include_static.png
+
+* add new Plug-In page content and choose comsolit Suggest
+
+	.. image:: ../Images/page_content.png

@@ -1,11 +1,11 @@
-<f:form pageUid="{settings.searchPid}" method="post" class="search" accesskey="5">
+<f:form pageUid="{settings.searchPid}" action="search" controller="Search" extensionName="IndexedSearch" method="post" class="search" accesskey="5">
       <div class="row collapse">
         <div class="small-10 columns">
-          <input name="tx_indexedsearch[sword]" class="typeahead" size="15" type="text" value="" placeholder="{settings.placeholder}" />
-          <input name="tx_indexedsearch[_sections]" type="hidden" value="0" />
-          <input name="tx_indexedsearch[pointer]" type="hidden" value="0" />
-          <input name="tx_indexedsearch[ext]" type="hidden" value="0" />
-          <input name="tx_indexedsearch[lang]" type="hidden" value="0" />
+          <input name="tx_indexedsearch_pi2[search][sword]" class="typeahead" size="15" type="text" value="" placeholder="{settings.placeholder}" />
+          <input name="tx_indexedsearch_pi2[search][_sections]" type="hidden" value="0" />
+          <input name="tx_indexedsearch_pi2[search][pointer]" type="hidden" value="0" />
+          <input name="tx_indexedsearch_pi2[search][ext]" type="hidden" value="0" />
+          <input name="tx_indexedsearch_pi2[search][languageUid]" type="hidden" value="0" />
         </div>
         <div class="small-2 columns">
           <button name="tx_indexedsearch[submit_button]" type="submit" class="button postfix" >

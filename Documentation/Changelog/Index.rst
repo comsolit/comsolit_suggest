@@ -46,4 +46,5 @@ ChangeLog
 +----------------+---------------------------------------------------------------------------------+
 | 3.0.0          | Support compatibility with Version 9.5 (Thanks to @PascaleBeier)                |
 |                | Security Fix for 9.5                                                            |
+|                | Fix search parameters and composer requirements                                 |
 +----------------+---------------------------------------------------------------------------------+
