@@ -35,16 +35,16 @@ class QueryController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
 
     /**
-     * action suggest
-     *
-     * @return void
+     * @return false|string
+     * @throws \TYPO3\CMS\Extbase\Mvc\Exception\NoSuchArgumentException
      */
     public function suggestAction()
     {
 
         if ($this->request->hasArgument('search')) {
 
-            $search = $GLOBALS['TYPO3_DB']->quoteStr($this->request->getArgument('search'), 'index_words');
+            $quoteSearch = $GLOBALS['TYPO3_DB']->quoteStr($this->request->getArgument('search'), 'index_words');
+            $search = $GLOBALS['TYPO3_DB']->escapeStrForLike($quoteSearch, 'index_words');
 
             $suggestions = [];
             $language = $GLOBALS['TSFE']->sys_language_uid;
