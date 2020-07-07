@@ -10,7 +10,6 @@
     "typo3"
   ],
   "replace": {
-    "comsolit_suggest": "self.version",
     "comsolit/comsolit_suggest": "self.version"
   },
   "require": {
