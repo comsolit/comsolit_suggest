@@ -48,3 +48,5 @@ ChangeLog
 |                | Security Fix for 9.5                                                            |
 |                | Fix search parameters and composer requirements                                 |
 +----------------+---------------------------------------------------------------------------------+
+| 3.0.1          | Support compatibility with Version 10.4 (Thanks to @akoenig-clickstorm)         |
++----------------+---------------------------------------------------------------------------------+
