@@ -14,7 +14,7 @@
     "comsolit/comsolit_suggest": "self.version"
   },
   "require": {
-    "typo3/cms-core": "10.4.2",
+    "typo3/cms-core": "^9.5 || ^10.4",
     "ext-pdo": "*",
     "ext-json": "*"
   },
