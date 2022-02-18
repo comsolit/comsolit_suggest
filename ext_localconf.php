@@ -6,7 +6,6 @@ defined('TYPO3_MODE') || die();
 	'Comsolit.comsolit_suggest',
 	'Suggest',
     [
-		'Query' => 'suggest',
-		
+        \Comsolit\ComsolitSuggest\Controller\QueryController::class => 'suggest',
 	]
 );
