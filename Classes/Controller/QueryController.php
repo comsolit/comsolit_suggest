@@ -2,6 +2,7 @@
 
 namespace Comsolit\ComsolitSuggest\Controller;
 
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Core\Context\Context;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -34,7 +35,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 /**
  * QueryController
  */
-class QueryController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class QueryController extends ActionController
 {
 
     /**
