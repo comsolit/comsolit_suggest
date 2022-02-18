@@ -57,14 +57,15 @@ page {
   }
   jsFooterInline {
     999 = TEXT
-    999.value (
+    999.data = context:language:id
+    999.wrap (
 			$(document).ready(function(){
 				var suggester = new Bloodhound({
 				    datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
 				    queryTokenizer: Bloodhound.tokenizers.whitespace,
 				    remote: {
 						cache: 'false',
-						url: '{$plugin.tx_comsolitsuggest.settings.URL}/?type=999&no_cache=1&tx_comsolitsuggest_suggest[search]=%QUERY&tx_comsolitsuggest_suggest[method]=suggest',
+						url: '{$plugin.tx_comsolitsuggest.settings.URL}/?type=999&L=|&no_cache=1&tx_comsolitsuggest_suggest[search]=%QUERY&tx_comsolitsuggest_suggest[method]=suggest',
 						wildcard: '%QUERY',
 						transport: function (ajaxOptions, onSuccess, onError) {
 							ajaxOptions.dataType = "html";

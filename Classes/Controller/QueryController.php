@@ -48,7 +48,9 @@ class QueryController extends ActionController
             $search = $this->request->getArgument('search');
 
             $language = GeneralUtility::makeInstance(Context::class)->getAspect('language')->getId();
-
+            if(array_key_exists('L', $this->request->getQueryParams())) {
+                $language = (int) $this->request->getQueryParams()['L'];
+            }
             $q = $this->getDatabaseConnection()->createQueryBuilder();
 
             $q->selectLiteral('SQL_NO_CACHE DISTINCT baseword')
