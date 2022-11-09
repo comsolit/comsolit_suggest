@@ -1,7 +1,7 @@
 <?php
 namespace Comsolit\ComsolitSuggest\Domain\Model;
 
-
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 /***************************************************************
  *
  *  Copyright notice
@@ -26,10 +26,9 @@ namespace Comsolit\ComsolitSuggest\Domain\Model;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-
 /**
  * Query
  */
-class Query extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class Query extends AbstractEntity {
 
 }

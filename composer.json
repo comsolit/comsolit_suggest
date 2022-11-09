@@ -14,9 +14,14 @@
     "comsolit/comsolit_suggest": "self.version"
   },
   "require": {
-    "typo3/cms-core": "^9.5.17 || ^10.4.2",
+    "typo3/cms-core": "^10.4.2 || ^11.5.6",
     "ext-pdo": "*",
     "ext-json": "*"
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "comsolit_suggest"
+    }
   },
   "autoload": {
     "psr-4": {
